@@ -6,7 +6,12 @@ import 'my_app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Parse().initialize(Env.appId, Env.parseUrl, clientKey: Env.clientKey);
+
+  try {
+    await Parse().initialize(Env.appId, Env.parseUrl, clientKey: Env.clientKey, debug: true);
+  } catch (e) {
+    debugPrint('Erro ao inicializar Parse: $e');
+  }
 
   runApp(const MyApp());
 }
