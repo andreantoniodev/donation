@@ -7,20 +7,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRoutes.router,
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(backgroundColor: Colors.blue.shade800, foregroundColor: Colors.white),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 241, 241, 241),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue.shade800,
-            foregroundColor: Colors.white,
-            textStyle: const TextStyle(fontSize: 16),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          ),
-        ),
-      ),
-    );
+    return MaterialApp.router(routerConfig: AppRoutes.router, theme: AppTheme.themeData);
   }
 }

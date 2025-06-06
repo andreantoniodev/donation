@@ -18,6 +18,7 @@ dependencies:
       url: https://github.com/Marcone-zz/parse-sdk-flutter
       path: packages/flutter
       ref: master
+  result_dart: ^2.1.0
   signals: ^6.0.2
 
 dev_dependencies:

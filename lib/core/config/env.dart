@@ -13,7 +13,7 @@ class Env {
     return value;
   }
 
-  static String get clientKey => _getKey('CLIENT_KEY');
-  static String get appId => _getKey('APP_ID');
-  static String get parseUrl => _getKey('PARSER_URL');
+  static String parseAppId = _getKey('APP_ID');
+  static String parseServerUrl = _getKey('PARSER_URL');
+  static String parseClientKey = _getKey('CLIENT_KEY');
 }
