@@ -18,12 +18,13 @@ class _SignInPageState extends State<SignInPage> {
   @override
   void initState() {
     controller = injector.get<AuthController>();
-
-    effect(() {
-      final userModel = controller.userModel.get();
-      if (userModel.hasValue) {
-        context.to.donation();
-      }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      effect(() {
+        final userModel = controller.userModel.get();
+        if (userModel.hasValue) {
+          context.to.donation();
+        }
+      });
     });
     super.initState();
   }
