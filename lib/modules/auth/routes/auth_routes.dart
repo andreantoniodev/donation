@@ -1,4 +1,4 @@
 abstract class AuthRoutes {
   static const signIn = '/signIn';
-  static const signUp = '/signUp';
+  static const signUp = '/signUp/:id';
 }

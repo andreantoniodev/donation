@@ -1,3 +1,4 @@
 abstract class DonationRoutes {
-  static const String donationList = '/donationList';
+  static const String donation = '/donationList';
+  static const String donationDetail = '/donationDetail/:id';
 }

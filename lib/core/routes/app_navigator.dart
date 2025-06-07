@@ -16,12 +16,40 @@ abstract class _AppNavigator {
     return context.pushReplacementNamed(AuthRoutes.signIn);
   }
 
-  Future<void> signUp() {
-    return context.pushNamed(AuthRoutes.signIn);
+  Future<void> signUp({String id = '0', Object? extra}) {
+    return context.pushNamed(AuthRoutes.signIn, pathParameters: {'id': id}, extra: extra);
   }
 
   void donation() {
-    return context.pushReplacementNamed(DonationRoutes.donationList);
+    return context.pushReplacementNamed(DonationRoutes.donation);
+  }
+
+  Future<void> donationDetail({String id = '0', Object? extra}) {
+    return context.pushNamed(DonationRoutes.donationDetail, pathParameters: {'id': id}, extra: extra);
+  }
+
+  void food() {
+    return context.pushReplacementNamed(FoodRoutes.food);
+  }
+
+  Future<void> foodDetail({String id = '0', Object? extra}) {
+    return context.pushNamed(FoodRoutes.foodDetail, pathParameters: {'id': id}, extra: extra);
+  }
+
+  void stock() {
+    return context.pushReplacementNamed(StockRoutes.stock);
+  }
+
+  Future<void> stockDetail({String id = '0', Object? extra}) {
+    return context.pushNamed(StockRoutes.stockDetail, pathParameters: {'id': id}, extra: extra);
+  }
+
+  void user() {
+    return context.pushReplacementNamed(UserRoutes.user);
+  }
+
+  Future<void> userDetail({String id = '0', Object? extra}) {
+    return context.pushNamed(UserRoutes.userDetail, pathParameters: {'id': id}, extra: extra);
   }
 }
 

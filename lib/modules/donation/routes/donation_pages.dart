@@ -5,6 +5,6 @@ import 'donation_routes.dart';
 
 abstract class DonationPages {
   static final List<GoRoute> routes = [
-    GoRoute(path: DonationRoutes.donationList, name: DonationRoutes.donationList, builder: (context, state) => const DonationListPage()),
+    GoRoute(path: DonationRoutes.donation, name: DonationRoutes.donation, builder: (context, state) => const DonationPage()),
   ];
 }

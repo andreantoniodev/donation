@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
-class DonationListPage extends StatelessWidget {
-  const DonationListPage({super.key});
+class DonationPage extends StatelessWidget {
+  const DonationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Doações')),
-      body: const Center(child: Text('Página de Doações')),
-    );
+    return const Scaffold(body: Center(child: Text('Página de Doações')));
   }
 }

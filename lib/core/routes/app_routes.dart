@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../../modules/auth/pages/sign_in_page.dart';
 import '../../modules/modules.dart';
 import '../core.dart';
 
@@ -23,11 +24,14 @@ abstract class AppRoutes {
       return null;
     },
     routes: [
-      GoRoute(path: HomeRoutes.home, builder: (context, state) => const HomePage()),
+      GoRoute(path: HomeRoutes.home, builder: (context, state) => const SignInPage()),
       StatefulShellRoute.indexedStack(
-        builder: (context, state, navigationShell) => const HomePage(),
+        builder: (context, state, navigationShell) => HomePage(child: navigationShell),
         branches: [
           StatefulShellBranch(routes: [...DonationPages.routes]),
+          StatefulShellBranch(routes: [...FoodPages.routes]),
+          StatefulShellBranch(routes: [...StockPages.routes]),
+          StatefulShellBranch(routes: [...UserPages.routes]),
         ],
       ),
       ...AuthPages.routes,
