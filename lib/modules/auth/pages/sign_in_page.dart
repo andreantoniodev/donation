@@ -22,7 +22,7 @@ class _SignInPageState extends State<SignInPage> {
     effect(() {
       final userModel = controller.userModel.get();
       if (userModel.hasValue) {
-        print('ok');
+        context.to.donation();
       }
     });
     super.initState();

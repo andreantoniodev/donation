@@ -1,8 +1,8 @@
 class Env {
   static const Map<String, String> _keys = {
-    "CLIENT_KEY": String.fromEnvironment('CLIENT_KEY'),
-    "APP_ID": String.fromEnvironment('APP_ID'),
-    "PARSER_URL": String.fromEnvironment('PARSER_URL'),
+    "CLIENT_KEY": "6tMLkIAh1tslDKHJSGIQQcoc2hrI1nbrKWEVhJ80",
+    "APP_ID": "37axvB2W2n8Z9ZcZIrtYEqn3oH4xwvhpM9k4VyLI",
+    "PARSER_URL": "https://parseapi.back4app.com",
   };
 
   static String _getKey(String key) {

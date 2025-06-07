@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
+
+import '../../../core/theme/app_colors.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -6,15 +9,16 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      shape: context.layout.breakpoint >= (LayoutBreakpoint.md) ? const RoundedRectangleBorder() : null,
+      width: context.layout.breakpoint >= (LayoutBreakpoint.md) ? 250 : null,
+      backgroundColor: AppColors.secondary,
       child: ListView(
-        children: [
-          const UserAccountsDrawerHeader(accountName: Text('Teste'), accountEmail: Text('teste@teste.com')),
-          Card(
-            child: ListTile(title: const Text('Doações'), leading: const Icon(Icons.handshake)),
-          ),
-          ListTile(title: const Text('Estoque'), leading: const Icon(Icons.inventory)),
-          ListTile(title: const Text('Usuários'), leading: const Icon(Icons.people)),
-          ListTile(title: const Text('Alimentos'), leading: const Icon(Icons.food_bank)),
+        children: const [
+          DrawerHeader(child: Text('Teste')),
+          ListTile(title: Text('Doações'), leading: Icon(Icons.handshake)),
+          ListTile(title: Text('Estoque'), leading: Icon(Icons.inventory)),
+          ListTile(title: Text('Usuários'), leading: Icon(Icons.people)),
+          ListTile(title: Text('Alimentos'), leading: Icon(Icons.food_bank)),
         ],
       ),
     );
