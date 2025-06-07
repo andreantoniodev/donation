@@ -24,7 +24,7 @@ class AuthController {
 
   bool get isLoading => userModel.value.isLoading;
 
-  Future<void> signIn() async {
+  Future<void> _signIn() async {
     userModel.value = AsyncState.loading();
 
     final result = await authRepository.signIn(userNameController.text.trim(), passwordController.text.trim());
@@ -33,7 +33,6 @@ class AuthController {
       (user) {
         userModel.value = AsyncState.data(user);
         userSession.setUser(user);
-        print('logado');
       },
       (failure) {
         userModel.value = AsyncState.error(failure);
@@ -41,9 +40,9 @@ class AuthController {
     );
   }
 
-  // void singIn() {
-  //   if (formKey.currentState?.validate() ?? true) {
-  //     _signIn();
-  //   }
-  // }
+  void signIn() {
+    if (formKey.currentState?.validate() ?? true) {
+      _signIn();
+    }
+  }
 }
