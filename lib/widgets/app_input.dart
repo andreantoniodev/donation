@@ -14,6 +14,7 @@ class AppInput extends StatefulWidget {
     this.inputFormatters,
     this.textCapitalization = TextCapitalization.none,
     this.isPassword,
+    this.onFieldSubmitted,
   });
   final String label;
   final bool obscureText;
@@ -25,6 +26,7 @@ class AppInput extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final TextCapitalization textCapitalization;
   final bool? isPassword;
+  final void Function(String)? onFieldSubmitted;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -64,6 +66,7 @@ class _AppInputState extends State<AppInput> {
           decoration: InputDecoration(suffixIcon: _getSuffixIcon()),
           validator: widget.validator,
           autovalidateMode: AutovalidateMode.onUserInteraction,
+          onFieldSubmitted: widget.onFieldSubmitted,
           onTapOutside: (event) {
             FocusScope.of(context).unfocus();
           },

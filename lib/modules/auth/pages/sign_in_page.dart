@@ -54,6 +54,9 @@ class _SignInPageState extends State<SignInPage> {
                     isPassword: true,
                     obscureText: true,
                     enabled: !controller.isLoading,
+                    onFieldSubmitted: (p0) {
+                      controller.signIn();
+                    },
                   ),
                   const SizedBox(height: 24),
                   SizedBox(
